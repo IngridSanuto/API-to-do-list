@@ -146,5 +146,5 @@ Servidor padrão: http://localhost:3000
 ```
 
 ## 👩‍💻 Autora
-**Ingrid Sanuto** 
-**Linkedln: www.linkedin.com/in/ingrid-sanuto-776744382** 
+- **Ingrid Sanuto** 
+- **Linkedln: www.linkedin.com/in/ingrid-sanuto-776744382** 
