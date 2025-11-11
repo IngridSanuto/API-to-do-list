@@ -143,8 +143,7 @@ npx sequelize-cli db:migrate
 # Iniciar o servidor
 npm start
 Servidor padrão: http://localhost:3000
-
----
+```
 
 ## 👩‍💻 Autora
 **Ingrid Sanuto** 
