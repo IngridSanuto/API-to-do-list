@@ -62,7 +62,7 @@ class TarefaController {
 
             return res.status(201).json(tarefaCriada);
         } catch (erro) {
-            return res.status(500).json({ mensagem: 'Erro ao criar tarefa, você deve ter 1 dos itens obrigatorios: título ou descrição', erro: erro.message });
+            return res.status(500).json({ mensagem: 'Erro ao criar tarefa, itens obrigatorios para criação de nova tarefa: título e status', erro: erro.message });
         }
     }
 
