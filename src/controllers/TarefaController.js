@@ -9,7 +9,7 @@ class TarefaController {
             const { status } = req.query;
 
             // Define os valores de status aceitos
-            const statusValidos = ['a fazer', 'em andamento', 'concluido'];
+            const statusValidos = ['a fazer', 'em andamento', 'concluída'];
 
             // Se o usuário enviou um status, mas ele não é válido → retorna um erro claro
             if (status && !statusValidos.includes(status)) {
