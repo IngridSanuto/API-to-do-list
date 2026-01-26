@@ -5,10 +5,8 @@ const tarefas = require('./tarefaRoute.js');
 const categorias = require('./categoriaRoute.js');
 
 module.exports = (app) => {
-    app.use(
-        express.json(),
-        tarefas,
-        categorias
-    );
-};
+    app.use(express.json());
 
+    app.use('/tarefas', tarefas);
+    app.use('/categorias', categorias);
+};

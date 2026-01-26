@@ -68,23 +68,34 @@ class TarefaController {
 
     // Buscar tarefa por ID
     static async pegaPorId(req, res) {
-        const { id } = req.params;
-        try {
-            const tarefa = await database.tarefa.findOne({ 
-                where: { id: Number(id) },
-                include: {
-                    model: database.categoria,
-                    as: 'categoria'
-                }
-             });
-            if (!tarefa) {
-                return res.status(404).json({ mensagem: 'Tarefa não encontrada' });
-            }
-            return res.status(200).json(tarefa);
-        } catch (erro) {
-            return res.status(500).json({ mensagem: 'Erro ao buscar tarefa', erro: erro.message });
-        }
+    const id = Number(req.params.id);
+
+    if (isNaN(id)) {
+        return res.status(400).json({ mensagem: 'ID inválido' });
     }
+
+    try {
+        const tarefa = await database.tarefa.findOne({
+            where: { id },
+            include: {
+                model: database.categoria,
+                as: 'categoria'
+            }
+        });
+
+        if (!tarefa) {
+            return res.status(404).json({ mensagem: 'Tarefa não encontrada' });
+        }
+
+        return res.status(200).json(tarefa);
+    } catch (erro) {
+        return res.status(500).json({
+            mensagem: 'Erro ao buscar tarefa',
+            erro: erro.message
+        });
+    }
+}
+
 
     // Atualizar uma tarefa completa
     static async atualizaTarefa(req, res) {

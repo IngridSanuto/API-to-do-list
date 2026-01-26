@@ -4,18 +4,18 @@ const CategoriaController = require('../controllers/CategoriaController.js');
 const router = Router();
 
 // Listar todas as categorias
-router.get('/categorias', CategoriaController.pegaTodas);
+router.get('/', CategoriaController.pegaTodas);
 
 // Buscar categoria por ID
-router.get('/categorias/:id', CategoriaController.pegaPorId);
+router.get('/:id', CategoriaController.pegaPorId);
 
 // Criar nova categoria
-router.post('/categorias', CategoriaController.criaCategoria);
+router.post('/', CategoriaController.criaCategoria);
 
 // Atualizar uma categoria
-router.put('/categorias/:id', CategoriaController.atualizaCategoria);
+router.put('/:id', CategoriaController.atualizaCategoria);
 
 // Deletar uma categoria
-router.delete('/categorias/:id', CategoriaController.deletaCategoria);
+router.delete('/:id', CategoriaController.deletaCategoria);
 
 module.exports = router;
